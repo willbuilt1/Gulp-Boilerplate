@@ -8,7 +8,7 @@ uglify = require('gulp-uglify');
 
 browserSync = require('browser-sync').create();
 // Use to preview build version. Make sure Gulp Watch has compiled latest HTML, CSS and JS
-gulp.task('previewDist', function(){
+gulp.task('previewProd', function(){
 
     browserSync.init({
         notify: false, // this removes notifications from top in sync
@@ -45,7 +45,7 @@ gulp.task('optimiseImages',['deleteDistFolder'], function() {
         }))
         .pipe(gulp.dest('./dist/assets/images'))
 })
-// Minimises css and html
+// Minimizes css and html
 // rev - returns a revision file number to ensure beats any caches
 // cssnano and uglify - minimises css and js respectively.
 gulp.task('usemin', ['deleteDistFolder'], function() {
